@@ -1,0 +1,22 @@
+<%= link_to 'back', root_path, class: "btn btn-primary" %>
+
+<h1> <%= @cocktail.name.capitalize %> </h1>
+
+
+<h2>How to do it ?</h2>
+<% @doses.each do |dose| %>
+<% ingredient = Ingredient.find(dose.ingredient_id) %>
+  <p><%= dose.description %> of <%= ingredient.name %>
+     <%= link_to ' Delete dose', cocktail_dose_path(@cocktail.id, dose.id), method: :delete %>
+ </p>
+<% end %>
+<br>
+<%= link_to 'Add new dose', new_cocktail_dose_path(@cocktail.id), {class: "btn btn-primary"}  %>
+
+<%= link_to 'Delete cocktail', cocktail_path(@cocktail.id), class: "btn btn-danger", method: :delete %>
+
+<!--  simple_form_for [@cocktail, @review] do |f| %> -->
+<!--  f.input :rating %> -->
+<!--  f.input :content %> -->
+<!--  .submit %> -->
+<!--   %> -->

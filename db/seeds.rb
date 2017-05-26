@@ -9,3 +9,8 @@
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
+
+Cocktail.create(name: "mojito")
+
+Dose.create(description: "3 cl", cocktail_id: 1, ingredient_id: 1)
+Dose.create(description: "2 unit of", cocktail_id: 1, ingredient_id: 3)
